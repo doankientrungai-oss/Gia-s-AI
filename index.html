@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ông Giáo Biết Tuốt - Gia sư AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Force MathJax inline elements to stay inline */
+      mjx-container[display="true"] {
+        display: block !important;
+        margin: 1.5em 0 !important;
+        text-align: center;
+      }
+      mjx-container:not([display="true"]) {
+        display: inline-block !important;
+        vertical-align: middle;
+        margin: 0 0.2em !important;
+        padding: 0 !important;
+      }
+      /* Prevent paragraph fragmentation in markdown */
+      .markdown-content p {
+        display: inline;
+      }
+      .markdown-content > * {
+        display: block;
+        margin-bottom: 0.75rem;
+      }
+      .markdown-content br {
+        display: block;
+        content: "";
+        margin-top: 0.5rem;
+      }
+    </style>
+    <script>
+      // Cấu hình MathJax 3 tối ưu cho hiển thị công thức toán học
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+        },
+        options: {
+          renderActions: {
+            addMenu: [] // Disable right-click menu to keep UI clean
+          }
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^9.0.1",
+    "remark-math": "https://aistudiocdn.com/remark-math@^6.0.0",
+    "rehype-mathjax/": "https://aistudiocdn.com/rehype-mathjax@^5.0.0/",
+    "remark-gfm": "https://aistudiocdn.com/remark-gfm@^4.0.0",
+    "pdfjs-dist/": "https://aistudiocdn.com/pdfjs-dist@^4.5.136/",
+    "mammoth": "https://aistudiocdn.com/mammoth@^1.8.0",
+    "docx": "https://cdn.jsdelivr.net/npm/docx@8.5.0/+esm"
+  }
+}
+</script>
+</head>
+  <body class="bg-[#f1f5f9]">
+    <div id="root"></div>
+    <script type="module">
+      // Set worker path for pdfjs-dist
+      window.pdfjsWorkerSrc = 'https://aistudiocdn.com/pdfjs-dist@^4.5.136/build/pdf.worker.mjs';
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
